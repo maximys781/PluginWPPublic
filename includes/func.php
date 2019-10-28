@@ -39,9 +39,9 @@ $c->showpic_func();*/
 
 //подключение к БД
         $host = 'localhost';
-        $db = 'y98066hv_1';
-        $user = 'y98066hv_1';
-        $pass = 'KizpPD2Lmr';
+        $db = 'bd';
+        $user = 'root';
+        $pass = 'root';
         $charset = 'utf8';
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
