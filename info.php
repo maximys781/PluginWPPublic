@@ -6,14 +6,14 @@ Author: Max
  */
 
 
-
+//хук для автоматического инсталла таблицы, когда плагин устанавливается
 register_activation_hook(__FILE__,'auto_install');
 function auto_install(){
     global $wpdb;
-    $tblname = $wpdb->prefix . "pic1";
+    $tblname = $wpdb->prefix . "pic1";//добавляем префикс к таблице
     $tblname2 = $wpdb->prefix . "hal1";
     if ($wpdb->get_var("SHOW TABLES LIKE '$tblname'") != $tblname) {
-        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');//если таблица отсутсвует, то подключаем файл upgrade, который поможет нам создать таблицы
         $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} COLLATE {$wpdb->collate}";
 // подключаем файл нужный для работы с bd
 // запрос на создание
@@ -55,7 +55,7 @@ KEY namepic(namepic)
 
 
 }
-
+//хук для деинсталла таблицы, когда плагин удаляется
 register_uninstall_hook(__FILE__,'auto_deinstall');
 
 function auto_deinstall(){

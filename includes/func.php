@@ -1,59 +1,75 @@
 <?php
-function special_plugin_styles() {
-    wp_register_style('style', plugins_url('css/style.css', __FILE__));
-    wp_enqueue_style('style');
-}
-add_action( 'wp_enqueue_scripts', 'special_plugin_styles');
+//namespace PicPlug;
+class PicPlug
+{
 
-add_action('admin_menu', 'func_add_admin_link');
+    public function __construct()
+    {
+       add_action('wp_enqueue_scripts',array($this,'special_plugin_styles'));
+        //add_action('admin_menu', 'func_add_admin_link');
+        add_shortcode('showpic',array($this,'showpic_func'));
+/*$a->special_plugin_styles();
+$b->func_add_admin_link();
+$c->showpic_func();*/
+    }
+    public function special_plugin_styles()
+       {
+           wp_register_style( 'my-plugin', plugins_url( 'Pictures/css/style.css' ) );
+           wp_enqueue_style( 'my-plugin' );
+       }
 
-function func_add_admin_link()
-{ //функция для добавления ссылки на страницу в меню
-    add_menu_page( //WP функция для добавления меню
-        'Плагин картины',// Название страницы
-        'Плагин картины',// Текст ссылки в меню
-        'manage_options',//привелегии на просмотр
-        'Pictures/includes/main.php'// ссылка на файл со страницей
-    );
-}
 
+
+
+    /*public  function func_add_admin_link()
+      { //функция для добавления ссылки на страницу в меню
+          add_menu_page( //WP функция для добавления меню
+              'Плагин картины',// Название страницы
+              'Плагин картины',// Текст ссылки в меню
+              'manage_options',//привелегии на просмотр
+              'Pictures/includes/main.php'// ссылка на файл со страницей
+          );
+      }*/
 
 
 // Обычный шоткод
-add_shortcode('showpic', 'showpic_func');
-
-function showpic_func()
-{
+    public function showpic_func()
+    {
 
 
 //подключение к БД
-    $host = 'localhost';
-    $db = 'bd';
-    $user = 'root';
-    $pass = 'root';
-    $charset = 'utf8';
+        $host = 'localhost';
+        $db = 'y98066hv_1';
+        $user = 'y98066hv_1';
+        $pass = 'KizpPD2Lmr';
+        $charset = 'utf8';
 
-    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-    $opt = [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES => false,
-    ];
-    $pdo = new PDO($dsn, $user, $pass, $opt);
-    try {
-        $dbh = new PDO($dsn, $user, $pass);
-    } catch (PDOException $e) {
-        die('Подключение не удалось: ' . $e->getMessage());
-    }
+        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        $opt = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false,
+        ];
+        $pdo = new PDO($dsn, $user, $pass, $opt);
+        try {
+            $dbh = new PDO($dsn, $user, $pass);
+        } catch (PDOException $e) {
+            die('Подключение не удалось: ' . $e->getMessage());
+        }
+        echo "<form action='' method='post'> 
+ <label for='search' id='search1'>Поиск </label><br> 
+     <input type='text' name='searchpic' id='search'>
+   
 
+     <button type='submit' name='srch' id='srch'>Найти</button>
+    </form>";
 
 //создание SQL запроса к таблице
-    $senzapr = $pdo->query('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1');
-    $data=$senzapr->fetchAll(PDO::FETCH_ASSOC);
-
+        $senzapr = $pdo->query('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1');
+        $data = $senzapr->fetchAll(PDO::FETCH_ASSOC);
 
 //вывод таблицы с данными
-    echo "
+        echo "
 <table width='100%' border='3'>
 <thead>
 <th>Название</th>
@@ -62,13 +78,13 @@ function showpic_func()
 <th>Зал</th>
 </thead>
 ";
-    foreach ($data as $row1) {
+        foreach ($data as $row1) {
 
-        $row1['namepic'];
-        $row1['descrpic'];
-        $row1['pricepic'];
-        $row1['hallpic'];
-        echo "<tbody>
+            $row1['namepic'];
+            $row1['descrpic'];
+            $row1['pricepic'];
+            $row1['hallpic'];
+            echo "<tbody>
 <tr>
   <td>" . $row1['namepic'] . "</td>
     <td>" . $row1['descrpic'] . "</td>
@@ -77,29 +93,26 @@ function showpic_func()
   </tr>
 </tbody>";
 
-        //$ell = $array['namepic'];
-    }
+            //$ell = $array['namepic'];
+        }
 
-/* Начинается раздел вставки данных */
-    $name=$_POST['namepic'];
-    $descr=$_POST['descrpic'];
-    $price=$_POST['pricepic'];
-    $hall=$_POST['hallpic'];
-
-
+        /* Начинается раздел вставки данных */
+        $name = $_POST['namepic'];
+        $descr = $_POST['descrpic'];
+        $price = $_POST['pricepic'];
+        $hall = $_POST['hallpic'];
 
 
-    $insert=$_POST['send'];
-    if(isset($insert)) {
+        $insert = $_POST['send'];
+        if (isset($insert)) {
 
-        $insert = $pdo->exec('INSERT INTO wp_pic1 (namepic,descrpic,pricepic,hallpic) VALUES('.$pdo->quote($name).','.$pdo->quote($descr).','.$pdo->quote($price).', '.$pdo->quote($hall).')');
+            $insert = $pdo->exec('INSERT INTO wp_pic1 (namepic,descrpic,pricepic,hallpic) VALUES(' . $pdo->quote($name) . ',' . $pdo->quote($descr) . ',' . $pdo->quote($price) . ', ' . $pdo->quote($hall) . ')');
 
-        //echo $insert;
-    }
+            //echo $insert;
+        }
 
 
-
-    echo "<form action='' method='post'> 
+        echo "<form action='' method='post'> 
  <label for='name' id='name1'>Название картины </label><br> 
      <input type='text' name='namepic' id='name'>
      <label for='descr1' id='opisanie1'>Описание картины </label><br>
@@ -113,10 +126,17 @@ function showpic_func()
     </form>";
 
 
+        //$senzapr2=$pdo->query('SELECT * FROM wp_pic1');
 
 
-    //$senzapr2=$pdo->query('SELECT * FROM wp_pic1');
-
-
-
+    }
 }
+new PicPlug();
+
+
+
+
+
+
+
+
