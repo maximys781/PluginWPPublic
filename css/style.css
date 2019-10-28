@@ -1,0 +1,81 @@
+#send{
+    background: #000;
+    width: 196px;
+    height: 40px;
+    font-family: Tahoma;
+    text-align: center;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    margin-left: 344px;
+    padding: 0px;
+
+}
+#send:hover{
+    background: #ffff;
+    transition: all 1s;
+    color:#000;
+    font-family: Tahoma;
+    border-color: 1px solid #bcccbe;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+}
+
+#name{
+    border-radius: 6px;
+    position: absolute;
+    left: 407px;
+    top: 1198px;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: normal;
+    /* margin-bottom: 30px; */
+    height: 32px;
+    border: 1px solid #b9b9b9;
+}
+
+#opisanie{
+    /* border-radius: 9px; */
+    /* position: absolute; */
+    border-radius: 6px;
+    position: absolute;
+    left: 407px;
+    font-family: Tahoma;
+    font-size: 15px;
+    top: 1237px;
+    /* margin-bottom: 30px; */
+    height: 32px;
+    border: 1px solid #b9b9b9;
+}
+
+#opisanie1 label{
+    font-family: Tahoma;
+}
+
+#opisanie1 label{font-family: Tahoma;}
+#price{
+    border-radius: 6px;
+    position: absolute;
+    left: 407px;
+    width: 149px;
+    font-family: Tahoma;
+    font-size: 15px;
+    top: 1274px;
+    /* margin-bottom: 30px; */
+    height: 32px;
+    border: 1px solid #b9b9b9;
+}
+#price1 label{font-family: Tahoma;}
+#hall{
+    border-radius: 6px;
+    position: absolute;
+    left: 407px;
+    top: 1316px;
+    font-family: Tahoma;
+    font-size: 15px;
+    width: 81px;
+    /* margin-bottom: 30px; */
+    height: 32px;
+    border: 1px solid #b9b9b9;
+}
+#hall1 label{font-family: Tahoma;}
