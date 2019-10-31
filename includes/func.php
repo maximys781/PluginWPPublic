@@ -14,8 +14,8 @@ $c->showpic_func();*/
     }
     public function special_plugin_styles()
        {
-           wp_register_style( 'my-plugin', plugins_url( 'Pictures/css/style.css' ) );
-           wp_enqueue_style( 'my-plugin' );
+           wp_register_style( 'my-plugin', plugins_url( 'Pictures/includes/css/style.css') );
+           wp_enqueue_style( 'my-plugin');
        }
 
 
@@ -39,8 +39,8 @@ $c->showpic_func();*/
 
 //подключение к БД
         $host = 'localhost';
-        $db = 'bd';
-        $user = 'root';
+        $db = 'root';
+        $user = 'roor';
         $pass = 'root';
         $charset = 'utf8';
 
@@ -56,15 +56,62 @@ $c->showpic_func();*/
         } catch (PDOException $e) {
             die('Подключение не удалось: ' . $e->getMessage());
         }
-        echo "<form action='' method='post'> 
+ /////////////////////////////////////////////////
+ /*Поиск*/
+
+         $sendsearch=$_GET['srch'];
+
+        if(isset($sendsearch)) {
+            $search=$_GET['searchpic'];
+            $srchzapr = $pdo->prepare('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE namepic=:namepic');
+            $srchzapr->execute([':namepic'=>$search]);
+            //$results2=$srchzapr-fetchAll(PDO::FETCH_OBJ);
+            echo "
+<table width='100%' border='3'>
+<thead>
+<th>Название</th>
+<th>Описание картины</th>
+<th>Цена картины</th>
+<th>Зал</th>
+</thead>
+";
+        }
+     foreach ($srchzapr as $row2)
+        {
+            $row2['namepic'];
+            $row2['descrpic'];
+            $row2['pricepic'];
+            $row2['hallpic'];
+            echo "<tbody>
+<tr>
+  <td>" . $row2['namepic'] . "</td>
+    <td>" . $row2['descrpic'] . "</td>
+      <td>" . $row2['pricepic'] . "</td>
+        <td>" . $row2['hallpic'] . "</td>
+  </tr>
+</tbody>";
+        }
+
+        echo "<form action='' method='get'> 
  <label for='search' id='search1'>Поиск </label><br> 
      <input type='text' name='searchpic' id='search'>
    
 
      <button type='submit' name='srch' id='srch'>Найти</button>
     </form>";
+        /*Поиск*/
+////////////////////////////////////////////
 
-//создание SQL запроса к таблице
+
+        /*Фильтр*/
+////////////////////////////////////////////
+
+
+        /*Фильтр*/
+////////////////////////////////////////////
+
+
+        /*Отрисовка таблицы*/
         $senzapr = $pdo->query('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1');
         $data = $senzapr->fetchAll(PDO::FETCH_ASSOC);
 
@@ -96,6 +143,10 @@ $c->showpic_func();*/
             //$ell = $array['namepic'];
         }
 
+
+        /*Отрисовка таблицы*/
+//////////////////////////////////////////////////////
+
         /* Начинается раздел вставки данных */
         $name = $_POST['namepic'];
         $descr = $_POST['descrpic'];
@@ -116,18 +167,16 @@ $c->showpic_func();*/
  <label for='name' id='name1'>Название картины </label><br> 
      <input type='text' name='namepic' id='name'>
      <label for='descr1' id='opisanie1'>Описание картины </label><br>
-     <input type='text' name='descrpic' id='descr'>
+     <textarea type='text' name='descrpic' id='descr'></textarea>
      <label for='price' id='price1'>Цена картины(Руб.)</label><br>
      <input type='text' name='pricepic' id='price'>
-     <label for='hall' id='hall1'>Зал</label><br>
+     <label for='hall' id='hall1'>Зал</label>
     <input type='text' name='hallpic' id='hall'>
 
      <button type='submit' name='send' id='send'>Вставить</button>
     </form>";
 
-
-        //$senzapr2=$pdo->query('SELECT * FROM wp_pic1');
-
+        /* Начинается раздел вставки данных */
 
     }
 }

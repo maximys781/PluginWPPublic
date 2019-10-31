@@ -3,9 +3,9 @@
 echo 'Privet Mir';
 //return 'Привет мир!';
 $host = 'localhost';
-$db   = 'y98066hv_1';
-$user = 'y98066hv_1';
-$pass = 'KizpPD2Lmr';
+$db   =
+$user =
+$pass =
 $charset = 'utf8';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
