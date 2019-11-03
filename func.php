@@ -12,15 +12,10 @@ class PicPlug
 $b->func_add_admin_link();
 $c->showpic_func();*/
     }
-
-
-
     public function special_plugin_styles()
        {
            wp_register_style( 'my-plugin', plugins_url( 'Pictures/includes/css/style.css') );
-           wp_register_style( 'my-plugin2', plugins_url( 'Pictures/includes/css/stylesearch.css') );
-           wp_register_style( 'my-plugin3', plugins_url( 'Pictures/includes/css/stylefilter.css') );
-           wp_enqueue_style( 'my-plugin','my-plugin2','my-plugin3');
+           wp_enqueue_style( 'my-plugin');
        }
 
 
@@ -44,9 +39,9 @@ $c->showpic_func();*/
 
 //подключение к БД
         $host = 'localhost';
-        $db = 'y98066hv_1';
-        $user = 'y98066hv_1';
-        $pass = 'KizpPD2Lmr';
+        $db = 'root';
+        $user = 'root';
+        $pass = 'root';
         $charset = 'utf8';
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -98,8 +93,10 @@ $c->showpic_func();*/
         }
 
         echo "<form action='' method='get'> 
- <label for='searchpic' id='search1'>Поиск </label><br> 
-     <input type='text' name='searchpic' id='searchpic'>
+ <label for='search' id='search1'>Поиск </label><br> 
+     <input type='text' name='searchpic' id='search'>
+   
+
      <button type='submit' name='srch' id='srch'>Найти</button>
     </form>";
         /*Поиск*/
@@ -108,78 +105,6 @@ $c->showpic_func();*/
 
         /*Фильтр*/
 ////////////////////////////////////////////
-        $filter=$_GET['filter'];
-       //$value=array(1,2,3,4);
-
-
-        //$value = $this.value;
-
-
-
-//echo $i;
-        /*$value[] = array(1,2,3,4);
-
-     $n=count($value);
-        for($i=0;$i<$n;$i++) {
-
-            $ukaz = $this->$value[$i];
-        }*/
-        if(isset($filter)) { //
-            //$hallnum=$_GET['hallnum'];
-            $value1 = $_GET['hallnum1'];
-            $value2 = $_GET['hallnum2'];
-            $value3 = $_GET['hallnum3'];
-            $value4 = $_GET['hallnum4'];
-
-
-
-                $filterzapr = $pdo->prepare('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE hallpic=:hallpic1 OR hallpic=:hallpic2 OR hallpic=:hallpic3 OR hallpic=:hallpic4 GROUP BY hallpic');
-                $filterzapr->bindParam(':hallpic1',$value1,PDO::PARAM_STR);
-            $filterzapr->bindParam(':hallpic2',$value2,PDO::PARAM_STR);
-            $filterzapr->bindParam(':hallpic3',$value3,PDO::PARAM_STR);
-            $filterzapr->bindParam(':hallpic4',$value4,PDO::PARAM_STR);
-
-
-                $filterzapr->execute();
-                //$results2=$srchzapr-fetchAll(PDO::FETCH_OBJ);
-            echo "
-<table width='100%' border='3'>
-<thead>
-<th>Название</th>
-<th>Описание картины</th>
-<th>Цена картины</th>
-<th>Зал</th>
-</thead>
-";
-        }
-        foreach ($filterzapr as $row3)
-        {
-            $row3['namepic'];
-            $row3['descrpic'];
-            $row3['pricepic'];
-            $row3['hallpic'];
-            echo "<tbody>
-<tr>
-  <td>" . $row3['namepic'] . "</td>
-    <td>" . $row3['descrpic'] . "</td>
-      <td>" . $row3['pricepic'] . "</td>
-        <td>" . $row3['hallpic'] . "</td>
-  </tr>
-</tbody>";
-        }
-
-        echo " <form action='' method='get'> 
-
- <label for='hal' id='filter1'>Фильтр </label>
-                                <select name='hallnum' id='hal'>
-                                <option disabled>Выберите зал:</option>
-                                    <option name='hall1num1' value='1'>Зал №1</option>
-                                    <option name='hallnum2'  value='2'>Зал №2</option>
-                                    <option name='hallnum3' value='3'>Зал №3</option>
-                                    <option name='hallnum4' value='4'>Зал №4</option>
-                                </select>
-                                <button type='submit' name='filter' id='filter'>Отфильтровать</button>
-                                </form>";
 
 
         /*Фильтр*/
@@ -238,9 +163,7 @@ $c->showpic_func();*/
         }
 
 
-        echo "<div class='insaall'>
-
-<form action='' method='post'> 
+        echo "<form action='' method='post'> 
  <label for='name' id='name1'>Название картины </label><br> 
      <input type='text' name='namepic' id='name'>
      <label for='descr1' id='opisanie1'>Описание картины </label><br>
@@ -251,23 +174,16 @@ $c->showpic_func();*/
     <input type='text' name='hallpic' id='hall'>
 
      <button type='submit' name='send' id='send'>Вставить</button>
-    </form>
-    </div>";
+    </form>";
 
         /* Начинается раздел вставки данных */
 
     }
-
-
-
 }
-function remove_sc_ver( $src ){
-    $parts = explode( '?', $src );
-    return $parts[0];
-}
-add_filter( 'script_loader_src', 'remove_sc_ver', 15, 1 );
-add_filter( 'style_loader_src', 'remove_sc_ver', 15, 1 );
 new PicPlug();
+
+
+
 
 
 
