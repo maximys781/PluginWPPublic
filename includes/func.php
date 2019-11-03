@@ -20,7 +20,8 @@ $c->showpic_func();*/
            wp_register_style( 'my-plugin', plugins_url( 'Pictures/includes/css/style.css') );
            wp_register_style( 'my-plugin2', plugins_url( 'Pictures/includes/css/stylesearch.css') );
            wp_register_style( 'my-plugin3', plugins_url( 'Pictures/includes/css/stylefilter.css') );
-           wp_enqueue_style( 'my-plugin','my-plugin2','my-plugin3');
+           wp_register_style( 'my-plugin3', plugins_url( 'Pictures/includes/css/mobile.css') );
+           wp_enqueue_style( 'my-plugin','my-plugin2','my-plugin3','my-plugin4');
        }
 
 
@@ -44,9 +45,9 @@ $c->showpic_func();*/
 
 //подключение к БД
         $host = 'localhost';
-        $db = 'y98066hv_1';
-        $user = 'y98066hv_1';
-        $pass = 'KizpPD2Lmr';
+        $db = 'root';
+        $user = 'root';
+        $pass = 'root';
         $charset = 'utf8';
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

@@ -42,3 +42,60 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
 
 }
+
+
+
+
+
+@media only screen and (max-width: 41.250em){
+
+    #searchpic{
+        border-radius: 6px;
+        position: relative;
+        left: 132px;
+        top: 305px;
+        font-family: Tahoma;
+        font-size: 15px;
+        font-weight: normal;
+        /* margin-bottom: 30px; */
+        height: 35px;
+        width: 148px;
+        border: 1px solid #b9b9b9;
+    }
+    #search1{
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 340px;
+        left: 213px;
+    }
+
+    #srch{
+        background: #000;
+        width: 80px;
+        height: 25px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        margin-left: 194px;
+        padding: 0px;
+        top: 246px;
+        position: relative;
+    }
+    #srch:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+
+
+
+
+}
