@@ -16,7 +16,8 @@ class PicPlug
            wp_register_style( 'my-plugin', plugins_url( 'Pictures/includes/css/style.css') );
            wp_register_style( 'my-plugin2', plugins_url( 'Pictures/includes/css/stylesearch.css') );
            wp_register_style( 'my-plugin3', plugins_url( 'Pictures/includes/css/stylefilter.css') );
-           wp_enqueue_style( 'my-plugin','my-plugin2','my-plugin3');
+           wp_register_style( 'my-plugin4', plugins_url( 'Pictures/includes/css/styledelete.css') );
+           wp_enqueue_style( 'my-plugin','my-plugin2','my-plugin3','my-plugin4');
        }
 
 
@@ -57,19 +58,20 @@ class PicPlug
         } catch (PDOException $e) {
             die('Подключение не удалось: ' . $e->getMessage());
         }
- /////////////////////////////////////////////////
- /*Поиск*/
+        /////////////////////////////////////////////////
+        /*Поиск*/
 
-         $sendsearch=$_GET['srch'];
+        $sendsearch = $_GET['srch'];
 
-        if(isset($sendsearch)) {
-            $search=$_GET['searchpic'];
-            $srchzapr = $pdo->prepare('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE namepic=:namepic');
-            $srchzapr->execute([':namepic'=>$search]);
+        if (isset($sendsearch)) {
+            $search = $_GET['searchpic'];
+            $srchzapr = $pdo->prepare('SELECT id,namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE namepic=:namepic');
+            $srchzapr->execute([':namepic' => $search]);
             //$results2=$srchzapr-fetchAll(PDO::FETCH_OBJ);
             echo "
 <table width='100%' border='3'>
 <thead>
+<th>№</th>
 <th>Название</th>
 <th>Описание картины</th>
 <th>Цена картины</th>
@@ -77,15 +79,15 @@ class PicPlug
 </thead>
 ";
         }
-     foreach ($srchzapr as $row2)
-        {
+        foreach ($srchzapr as $row2) {
+            $row2['id'];
             $row2['namepic'];
             $row2['descrpic'];
             $row2['pricepic'];
             $row2['hallpic'];
             echo "<tbody>
 <tr>
-  <td>" . $row2['namepic'] . "</td>
+  <td>" . $row2['id'] . "</td>
     <td>" . $row2['descrpic'] . "</td>
       <td>" . $row2['pricepic'] . "</td>
         <td>" . $row2['hallpic'] . "</td>
@@ -104,19 +106,20 @@ class PicPlug
 
         /*Фильтр*/
 ////////////////////////////////////////////
-        $filter=$_GET['filter'];
+        $filter = $_GET['filter'];
 
-        if(isset($filter)) { //
+        if (isset($filter)) { //
 
             $value1 = $_GET['hallnum'];
 
-                $filterzapr = $pdo->prepare('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE hallpic=:hallpic1');
-                $filterzapr->execute([':hallpic1'=>$value1]);
+            $filterzapr = $pdo->prepare('SELECT id,namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE hallpic=:hallpic1');
+            $filterzapr->execute([':hallpic1' => $value1]);
 
             echo "
             <div class='filtab'>
 <table width='100%' border='3'>
 <thead>
+<th>№</th>
 <th>Название</th>
 <th>Описание картины</th>
 <th>Цена картины</th>
@@ -124,15 +127,15 @@ class PicPlug
 </thead>
 ";
         }
-        foreach ($filterzapr as $row3)
-        {
+        foreach ($filterzapr as $row3) {
+            $row3['id'];
             $row3['namepic'];
             $row3['descrpic'];
             $row3['pricepic'];
             $row3['hallpic'];
             echo "<tbody>
 <tr>
-  <td>" . $row3['namepic'] . "</td>
+  <td>" . $row3['id'] . "</td>
     <td>" . $row3['descrpic'] . "</td>
       <td>" . $row3['pricepic'] . "</td>
         <td>" . $row3['hallpic'] . "</td>
@@ -159,13 +162,14 @@ class PicPlug
 
 
         /*Отрисовка таблицы*/
-        $senzapr = $pdo->query('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1');
+        $senzapr = $pdo->query('SELECT id,namepic,descrpic,pricepic,hallpic FROM wp_pic1');
         $data = $senzapr->fetchAll(PDO::FETCH_ASSOC);
 
 //вывод таблицы с данными
         echo "
 <table width='100%' border='3'>
 <thead>
+<th>№</th>
 <th>Название</th>
 <th>Описание картины</th>
 <th>Цена картины</th>
@@ -174,12 +178,14 @@ class PicPlug
 ";
         foreach ($data as $row1) {
 
+            $row1['id'];
             $row1['namepic'];
             $row1['descrpic'];
             $row1['pricepic'];
             $row1['hallpic'];
             echo "<tbody>
 <tr>
+<td>" . $row1['id'] . "</td>
   <td>" . $row1['namepic'] . "</td>
     <td>" . $row1['descrpic'] . "</td>
       <td>" . $row1['pricepic'] . "</td>
@@ -227,10 +233,34 @@ class PicPlug
     </div>";
 
         /* Начинается раздел вставки данных */
+        ///////////////////////////////////
+        ///
+        ///
+        /* Удаление элемента */
+
+
+
+        /* $delete = $_POST['delete'];
+
+    if (isset($delete)) { //
+
+        $valuedlt = $_POST['idpic'];
+
+        $deleterzapr = $pdo->prepare('DELETE id FROM wp_pic1 WHERE id=:id');
+        $deleterzapr->execute([':id' => $valuedlt]);*/ //не до конца реализовано
+
+        echo "<div class='insaall1'>
+
+<form action='' method='post'> 
+ <label for='id' id='id1'>ID картины </label><br> 
+     <input type='text' name='idpic' id='id'>
+     <button type='submit' name='delete' id='delete'>Удалить</button>
+    </form>
+    </div>";
+
+        /* Удаление элемента */
 
     }
-
-
 
 }
 function remove_sc_ver( $src ){
