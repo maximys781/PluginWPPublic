@@ -8,14 +8,15 @@ class PicPlug
        add_action('wp_enqueue_scripts',array($this,'special_plugin_styles'));
         //add_action('admin_menu', 'func_add_admin_link');
         add_shortcode('showpic',array($this,'showpic_func'));
-/*$a->special_plugin_styles();
-$b->func_add_admin_link();
-$c->showpic_func();*/
+
     }
+
     public function special_plugin_styles()
        {
-           wp_register_style( 'my-plugin', plugins_url( 'Pictures/css/style.css' ) );
-           wp_enqueue_style( 'my-plugin' );
+           wp_register_style( 'my-plugin', plugins_url( 'Pictures/includes/css/style.css') );
+           wp_register_style( 'my-plugin2', plugins_url( 'Pictures/includes/css/stylesearch.css') );
+           wp_register_style( 'my-plugin3', plugins_url( 'Pictures/includes/css/stylefilter.css') );
+           wp_enqueue_style( 'my-plugin','my-plugin2','my-plugin3');
        }
 
 
@@ -39,7 +40,7 @@ $c->showpic_func();*/
 
 //подключение к БД
         $host = 'localhost';
-        $db = 'bd';
+        $db = 'root';
         $user = 'root';
         $pass = 'root';
         $charset = 'utf8';
@@ -56,15 +57,108 @@ $c->showpic_func();*/
         } catch (PDOException $e) {
             die('Подключение не удалось: ' . $e->getMessage());
         }
-        echo "<form action='' method='post'> 
- <label for='search' id='search1'>Поиск </label><br> 
-     <input type='text' name='searchpic' id='search'>
-   
+ /////////////////////////////////////////////////
+ /*Поиск*/
 
+         $sendsearch=$_GET['srch'];
+
+        if(isset($sendsearch)) {
+            $search=$_GET['searchpic'];
+            $srchzapr = $pdo->prepare('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE namepic=:namepic');
+            $srchzapr->execute([':namepic'=>$search]);
+            //$results2=$srchzapr-fetchAll(PDO::FETCH_OBJ);
+            echo "
+<table width='100%' border='3'>
+<thead>
+<th>Название</th>
+<th>Описание картины</th>
+<th>Цена картины</th>
+<th>Зал</th>
+</thead>
+";
+        }
+     foreach ($srchzapr as $row2)
+        {
+            $row2['namepic'];
+            $row2['descrpic'];
+            $row2['pricepic'];
+            $row2['hallpic'];
+            echo "<tbody>
+<tr>
+  <td>" . $row2['namepic'] . "</td>
+    <td>" . $row2['descrpic'] . "</td>
+      <td>" . $row2['pricepic'] . "</td>
+        <td>" . $row2['hallpic'] . "</td>
+  </tr>
+</tbody>";
+        }
+
+        echo "<form action='' method='get'> 
+ <label for='searchpic' id='search1'>Поиск </label><br> 
+     <input type='text' name='searchpic' id='searchpic'>
      <button type='submit' name='srch' id='srch'>Найти</button>
     </form>";
+        /*Поиск*/
+////////////////////////////////////////////
 
-//создание SQL запроса к таблице
+
+        /*Фильтр*/
+////////////////////////////////////////////
+        $filter=$_GET['filter'];
+
+        if(isset($filter)) { //
+
+            $value1 = $_GET['hallnum'];
+
+                $filterzapr = $pdo->prepare('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1 WHERE hallpic=:hallpic1');
+                $filterzapr->execute([':hallpic1'=>$value1]);
+
+            echo "
+            <div class='filtab'>
+<table width='100%' border='3'>
+<thead>
+<th>Название</th>
+<th>Описание картины</th>
+<th>Цена картины</th>
+<th>Зал</th>
+</thead>
+";
+        }
+        foreach ($filterzapr as $row3)
+        {
+            $row3['namepic'];
+            $row3['descrpic'];
+            $row3['pricepic'];
+            $row3['hallpic'];
+            echo "<tbody>
+<tr>
+  <td>" . $row3['namepic'] . "</td>
+    <td>" . $row3['descrpic'] . "</td>
+      <td>" . $row3['pricepic'] . "</td>
+        <td>" . $row3['hallpic'] . "</td>
+  </tr>
+</tbody></div>";
+        }
+
+        echo " <form action='' method='get'> 
+
+ <label for='hal' id='filter1'>Фильтр </label>
+                                <select name='hallnum' id='hal'>
+                                <option disabled>Выберите зал:</option>
+                                    <option name='hall1num' value='1'>Зал №1</option>
+                                    <option name='hallnum'  value='2'>Зал №2</option>
+                                    <option name='hallnum' value='3'>Зал №3</option>
+                                    <option name='hallnum' value='4'>Зал №4</option>
+                                </select>
+                                <button type='submit' name='filter' id='filter'>Выполнить</button>
+                                </form>";
+
+
+        /*Фильтр*/
+////////////////////////////////////////////
+
+
+        /*Отрисовка таблицы*/
         $senzapr = $pdo->query('SELECT namepic,descrpic,pricepic,hallpic FROM wp_pic1');
         $data = $senzapr->fetchAll(PDO::FETCH_ASSOC);
 
@@ -96,6 +190,10 @@ $c->showpic_func();*/
             //$ell = $array['namepic'];
         }
 
+
+        /*Отрисовка таблицы*/
+//////////////////////////////////////////////////////
+
         /* Начинается раздел вставки данных */
         $name = $_POST['namepic'];
         $descr = $_POST['descrpic'];
@@ -112,29 +210,36 @@ $c->showpic_func();*/
         }
 
 
-        echo "<form action='' method='post'> 
+        echo "<div class='insaall'>
+
+<form action='' method='post'> 
  <label for='name' id='name1'>Название картины </label><br> 
      <input type='text' name='namepic' id='name'>
      <label for='descr1' id='opisanie1'>Описание картины </label><br>
-     <input type='text' name='descrpic' id='descr'>
+     <textarea type='text' name='descrpic' id='descr'></textarea>
      <label for='price' id='price1'>Цена картины(Руб.)</label><br>
      <input type='text' name='pricepic' id='price'>
-     <label for='hall' id='hall1'>Зал</label><br>
+     <label for='hall' id='hall1'>Зал</label>
     <input type='text' name='hallpic' id='hall'>
 
      <button type='submit' name='send' id='send'>Вставить</button>
-    </form>";
+    </form>
+    </div>";
 
-
-        //$senzapr2=$pdo->query('SELECT * FROM wp_pic1');
-
+        /* Начинается раздел вставки данных */
 
     }
+
+
+
 }
+function remove_sc_ver( $src ){
+    $parts = explode( '?', $src );
+    return $parts[0];
+}
+add_filter( 'script_loader_src', 'remove_sc_ver', 15, 1 );
+add_filter( 'style_loader_src', 'remove_sc_ver', 15, 1 );
 new PicPlug();
-
-
-
 
 
 

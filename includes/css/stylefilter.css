@@ -1,0 +1,96 @@
+#filter{
+    background: #000;
+    width: 176px;
+    height: 40px;
+    font-family: Tahoma;
+    text-align: center;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    right: 480px;
+    padding: 0px;
+    top: 244px;
+    position: relative;
+}
+#filter:hover{
+    background: #ffff;
+    transition: all 1s;
+    color:#000;
+    font-family: Tahoma;
+    border-color: 1px solid #bcccbe;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+}
+
+#hal{
+    right: 562px;
+    top: 279px;
+    position: relative;
+}
+
+#filter1{
+    font-family: Tahoma;
+    margin-top: 15px;
+    position: relative;
+    top: 239px;
+    right: 484px;
+}
+
+
+
+#filtab{
+    position: relative;
+}
+
+
+
+@media only screen and (min-width : 320px) and (max-width : 480px){
+
+    #filter{
+        background: #000;
+        width: 118px;
+        height: 25px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        left: -43px;
+        padding: 0px;
+        top: 60px;
+        position: relative;
+    }
+    #filter:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+    #hal{
+        right: 128px;
+        top: 116px;
+        position: absolute;
+        width: 106px;
+        border: 1px solid #b9b9b9b9;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    #filter1{
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 76px;
+        right: 44px;
+    }
+
+
+
+
+
+
+}

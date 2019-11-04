@@ -67,15 +67,4 @@ function auto_deinstall(){
 
 }
 
-
-
-
-//require_once plugin_dir_path(__FILE__) . 'css/style.css';
-//require_once plugin_dir_path(__FILE__) . 'css/animate.css';
-//require_once plugin_dir_path(__FILE__) . 'css/datatables.min.css';
-//require_once plugin_dir_path(__FILE__) . 'js/index.js';
-//require_once plugin_dir_path(__FILE__) . 'js/datatables.min.js';
-
-//require_once plugin_dir_path(__FILE__) . 'css/style.css';
 require_once plugin_dir_path(__FILE__) . 'includes/func.php'; //через функцию WP говорим о том, что в этом каталоге у нас лежит подкаталог, где хранится файл с функциями
-//require_once plugin_dir_path(__FILE__) . 'includes/install.php'; //через функцию WP говорим о том, что в этом каталоге у нас лежит подкаталог, где хранится файл с функциями
