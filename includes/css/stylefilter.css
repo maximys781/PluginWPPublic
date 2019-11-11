@@ -42,9 +42,119 @@
     position: relative;
 }
 
+/*--------------*/
+
+@media only screen and (min-width : 240px) and (max-width: 320px){
+    #filter{
+        background: #000;
+        width: 119px;
+        height: 25px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        right: 45px;
+        padding: 0px;
+        top: 60px;
+        position: relative;
+    }
+    #filter:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+    #hal{
+        right: 118px;
+        top: 117px;
+        border: 1px solid #b9b9b9;
+        width: 102px;
+        border-radius: 6px;
+        height: 29px;
+        position: relative;
+    }
+
+    #filter1{
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 84px;
+        right: 25px;
+    }
 
 
-@media only screen and (min-width : 320px) and (max-width : 480px){
+
+    #filtab{
+        position: relative;
+    }
+
+
+}
+@media only screen and (min-width : 322px) and (max-width: 386px){
+    #filter{
+        background: #000;
+        width: 119px;
+        height: 25px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        right: 17px;
+        padding: 0px;
+        top: 60px;
+        position: relative;
+    }
+    #filter:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+    #hal{
+        right: 90px;
+        top: 117px;
+        border: 1px solid #b9b9b9;
+        width: 102px;
+        border-radius: 6px;
+        height: 29px;
+        position: relative;
+    }
+
+    #filter1{
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 84px;
+        right: 0px;
+    }
+
+
+
+    #filtab{
+        position: relative;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width : 387px) and (max-width : 480px){
 
     #filter{
         background: #000;
@@ -88,9 +198,215 @@
         right: 44px;
     }
 
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1022px)  {
+    #filter {
+        background: #000;
+        width: 124px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        right: 328px;
+        padding: 0px;
+        top: 227px;
+        position: relative;
+    }
+
+    #filter:hover {
+        background: #ffff;
+        transition: all 1s;
+        color: #000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.2);
+
+    }
+
+    #hal {
+        right: 317px;
+        top: 283px;
+        border-radius: 6px;
+        position: relative;
+        border: 1px solid #b9b9b9;
+        width: 102px;
+    }
+
+    #filter1 {
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 315px;
+        right: 307px;
+    }
+
+
+    #filtab {
+        position: relative;
+    }
+
+
+}
+
+
+@media only screen and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    #filter {
+        background: #000;
+        width: 124px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        right: 368px;
+        padding: 0px;
+        top: 220px;
+        position: relative;
+    }
+
+    #filter:hover {
+        background: #ffff;
+        transition: all 1s;
+        color: #000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.2);
+
+    }
+
+    #hal {
+        right: 440px;
+        top: 275px;
+        position: relative;
+        border: 1px solid #b9b9b9;
+        width: 102px;
+    }
+
+    #filter1 {
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 237px;
+        right: 349px;
+    }
+
+
+    #filtab {
+        position: relative;
+    }
+}
+
+
+
+@media only screen  and (min-width: 1224px) and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    #filter {
+        background: #000;
+        width: 120px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        right: 428px;
+        padding: 0px;
+        top: 244px;
+        position: relative;
+    }
+    #filter:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+    #hal{
+        right: 512px;
+        top: 285px;
+        border-radius: 6px;
+        border: 1px solid #b9b9b9;
+        /* text-align: center; */
+        /* display: flex; */
+        position: relative;
+        width: 121px;
+    }
+
+    #filter1{
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 246px;
+        right: 406px;
+    }
+
+
+
+    #filtab{
+        position: relative;
+    }
+
+}
 
 
 
 
+@media only screen   and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi)  {
+    #filter{
+        background: #000;
+        width: 176px;
+        height: 40px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        right: 480px;
+        padding: 0px;
+        top: 244px;
+        position: relative;
+    }
+    #filter:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+    #hal{
+        right: 562px;
+        top: 282px;
+        border-radius: 6px;
+        position: relative;
+    }
+
+    #filter1{
+        font-family: Tahoma;
+        margin-top: 15px;
+        position: relative;
+        top: 239px;
+        right: 484px;
+    }
+
+
+
+    #filtab{
+        position: relative;
+    }
 
 }

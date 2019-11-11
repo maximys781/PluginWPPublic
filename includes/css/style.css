@@ -106,8 +106,228 @@
     padding: 0px 0px -6px;
 }
 
+@media only screen and (min-width : 240px) and (max-width: 320px){
+    table{
+        width: 100%;
+        /* float: right; */
+        /* margin-left: 19px; */
+    }
+    tr{
+        width:100%;
+    }
 
-@media only screen and (min-width : 320px) and (max-width : 480px){
+    #send{
+        background: #000;
+        width: 117px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        margin-left: 171px;
+        padding: 0px;
+        top: 112px;
+        position: relative;
+    }
+    #send:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+
+
+
+    #name{
+        border-radius: 6px;
+        position: absolute;
+        left: 245px;
+        top: 1875px;
+        font-family: Tahoma;
+        font-size: 15px;
+        font-weight: normal;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        width: 194px;
+        border: 1px solid #b9b9b9;
+    }
+    #name1{
+        font-family: Tahoma;
+    }
+    #descr{
+        border-radius: 9px;
+        position: absolute;
+        border-radius: 6px;
+        position: absolute;
+        left: 245px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1923px;
+        /* margin-bottom: 30px; */
+        height: 100px;
+        width: 223px;
+        border: 1px solid #b9b9b9;
+    }
+
+    #opisanie1{
+        font-family: Tahoma;
+    }
+
+    #price{
+        border-radius: 6px;
+        position: absolute;
+        left: 246px;
+        width: 149px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 2047px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #price1{
+        font-family: Tahoma;
+        margin-top: 95px;
+        position: absolute;
+    }
+    #hall{
+        border-radius: 6px;
+        position: absolute;
+        left: 246px;
+        top: 2094px;
+        font-family: Tahoma;
+        font-size: 15px;
+        width: 81px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #hall1{
+        font-family: Tahoma;
+        top: 105px;
+        position: relative;
+    }
+
+
+}
+@media only screen and (min-width : 322px) and (max-width: 386px){
+    table{
+        width: 100%;
+        /* float: right; */
+        /* margin-left: 19px; */
+    }
+    tr{
+        width:100%;
+    }
+
+    #send{
+        background: #000;
+        width: 117px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        margin-left: 232px;
+        padding: 0px;
+        top: 112px;
+        position: relative;
+    }
+    #send:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+
+
+
+    #name{
+        border-radius: 6px;
+        position: absolute;
+        left: 245px;
+        top: 1824px;
+        font-family: Tahoma;
+        font-size: 15px;
+        font-weight: normal;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        width: 194px;
+        border: 1px solid #b9b9b9;
+    }
+    #name1{
+        font-family: Tahoma;
+    }
+    #descr{
+        border-radius: 9px;
+        position: absolute;
+        border-radius: 6px;
+        position: absolute;
+        left: 245px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1873px;
+        /* margin-bottom: 30px; */
+        height: 100px;
+        width: 223px;
+        border: 1px solid #b9b9b9;
+    }
+
+    #opisanie1{
+        font-family: Tahoma;
+    }
+
+    #price{
+        border-radius: 6px;
+        position: absolute;
+        left: 246px;
+        width: 149px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1991px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #price1{
+        font-family: Tahoma;
+        margin-top: 95px;
+        position: absolute;
+    }
+    #hall{
+        border-radius: 6px;
+        position: absolute;
+        left: 246px;
+        top: 2041px;
+        font-family: Tahoma;
+        font-size: 15px;
+        width: 81px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #hall1{
+        font-family: Tahoma;
+        top: 105px;
+        position: relative;
+    }
+
+}
+
+
+
+
+@media only screen and (min-width : 387px) and (max-width : 485px){
     table{
         width: 100%;
         /* float: right; */
@@ -126,7 +346,111 @@
         border-radius: 9px;
         display: flex;
         justify-content: center;
-        margin-left: 223px;
+        margin-left: 265px;
+        padding: 0px;
+        top: 102px;
+        position: relative;
+    }
+    #send:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+
+
+
+    #name{
+        border-radius: 6px;
+        position: absolute;
+        left: 245px;
+        top: 1781px;
+        font-family: Tahoma;
+        font-size: 15px;
+        font-weight: normal;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        width: 194px;
+        border: 1px solid #b9b9b9;
+    }
+    #name1{
+        font-family: Tahoma;
+    }
+    #descr{
+        border-radius: 9px;
+        position: absolute;
+        border-radius: 6px;
+        position: absolute;
+        left: 245px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1829px;
+        /* margin-bottom: 30px; */
+        height: 100px;
+        width: 223px;
+        border: 1px solid #b9b9b9;
+    }
+
+    #opisanie1{
+        font-family: Tahoma;
+    }
+
+    #price{
+        border-radius: 6px;
+        position: absolute;
+        left: 246px;
+        width: 149px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1944px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #price1{
+        font-family: Tahoma;
+        margin-top: 85px;
+        position: absolute;
+    }
+    #hall{
+        border-radius: 6px;
+        position: absolute;
+        left: 246px;
+        top: 1989px;
+        font-family: Tahoma;
+        font-size: 15px;
+        width: 81px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #hall1{
+        font-family: Tahoma;
+        top: 93px;
+        position: relative;
+    }
+
+
+}
+
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1022px)  {
+    #send{
+        background: #000;
+        width: 158px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        margin-left: 331px;
         padding: 0px;
         top: 89px;
         position: relative;
@@ -147,8 +471,8 @@
     #name{
         border-radius: 6px;
         position: absolute;
-        left: 245px;
-        top: 2293px;
+        left: 371px;
+        top: 1885px;
         font-family: Tahoma;
         font-size: 15px;
         font-weight: normal;
@@ -161,17 +485,17 @@
         font-family: Tahoma;
     }
     #descr{
-        border-radius: 9px;
-        position: absolute;
+        /* border-radius: 9px; */
+        /* position: absolute; */
         border-radius: 6px;
         position: absolute;
-        left: 245px;
+        left: 371px;
         font-family: Tahoma;
         font-size: 15px;
-        top: 2338px;
+        top: 1931px;
         /* margin-bottom: 30px; */
         height: 100px;
-        width: 223px;
+        width: 234px;
         border: 1px solid #b9b9b9;
     }
 
@@ -182,22 +506,25 @@
     #price{
         border-radius: 6px;
         position: absolute;
-        left: 246px;
+        left: 371px;
         width: 149px;
         font-family: Tahoma;
         font-size: 15px;
-        top: 2444px;
+        top: 2043px;
         /* margin-bottom: 30px; */
         height: 32px;
         border: 1px solid #b9b9b9;
     }
-    #price1{font-family: Tahoma;    margin-top: 76px;
-        position: absolute;}
+    #price1{
+        font-family: Tahoma;
+        margin-top: 81px;
+        position: absolute;
+    }
     #hall{
         border-radius: 6px;
         position: absolute;
-        left: 246px;
-        top: 2485px;
+        left: 371px;
+        top: 2092px;
         font-family: Tahoma;
         font-size: 15px;
         width: 81px;
@@ -212,6 +539,368 @@
 
 
 
+    .insaall{
+        /* position: relative; */
+        /* margin-top: 26px; */
+        /* position: relative; */
+        /* bottom: 36px; */
+        padding: 0px 0px -6px;
+        /* margin-left: 49px; */
+    }
 
+}
+
+
+
+
+@media only screen and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1)  {
+    #send{
+        background: #000;
+        width: 158px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        margin-left: 331px;
+        padding: 0px;
+        top: 89px;
+        position: relative;
+    }
+    #send:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+
+
+
+    #name{
+        border-radius: 6px;
+        position: absolute;
+        left: 422px;
+        top: 1799px;
+        font-family: Tahoma;
+        font-size: 15px;
+        font-weight: normal;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        width: 194px;
+        border: 1px solid #b9b9b9;
+    }
+    #name1{
+        font-family: Tahoma;
+    }
+    #descr{
+        /* border-radius: 9px; */
+        /* position: absolute; */
+        border-radius: 6px;
+        position: absolute;
+        left: 422px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1844px;
+        /* margin-bottom: 30px; */
+        height: 100px;
+        width: 234px;
+        border: 1px solid #b9b9b9;
+    }
+
+    #opisanie1{
+        font-family: Tahoma;
+    }
+
+    #price{
+        border-radius: 6px;
+        position: absolute;
+        left: 422px;
+        width: 149px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1958px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #price1{
+        font-family: Tahoma;
+        margin-top: 81px;
+        position: absolute;
+    }
+    #hall{
+        border-radius: 6px;
+        position: absolute;
+        left: 424px;
+        top: 2001px;
+        font-family: Tahoma;
+        font-size: 15px;
+        width: 81px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #hall1{font-family: Tahoma;     top: 86px;
+        position: relative;
+    }
+
+
+
+
+    .insaall{
+        /* position: relative; */
+        /* margin-top: 26px; */
+        /* position: relative; */
+        /* bottom: 36px; */
+        padding: 0px 0px -6px;
+        /* margin-left: 49px; */
+    }
+}
+@media only screen and (min-width: 1024px) and (max-device-width: 1220px)
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+@media only screen and (min-width: 1224px) and (max-device-width: 1440px)
+and (-webkit-min-device-pixel-ratio: 1)  {
+    #send{
+        background: #000;
+        width: 158px;
+        height: 35px;
+        font-family: Tahoma;
+        text-align: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        margin-left: 331px;
+        padding: 0px;
+        top: 89px;
+        position: relative;
+    }
+    #send:hover{
+        background: #ffff;
+        transition: all 1s;
+        color:#000;
+        font-family: Tahoma;
+        border-color: 1px solid #bcccbe;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+    }
+
+
+
+
+    #name{
+        border-radius: 6px;
+        position: absolute;
+        left: 437px;
+        top: 1795px;
+        font-family: Tahoma;
+        font-size: 15px;
+        font-weight: normal;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        width: 194px;
+        border: 1px solid #b9b9b9;
+    }
+    #name1{
+        font-family: Tahoma;
+    }
+    #descr{
+        /* border-radius: 9px; */
+        /* position: absolute; */
+        border-radius: 6px;
+        position: absolute;
+        left: 437px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1844px;
+        /* margin-bottom: 30px; */
+        height: 100px;
+        width: 234px;
+        border: 1px solid #b9b9b9;
+    }
+
+    #opisanie1{
+        font-family: Tahoma;
+    }
+
+    #price{
+        border-radius: 6px;
+        position: absolute;
+        left: 437px;
+        width: 149px;
+        font-family: Tahoma;
+        font-size: 15px;
+        top: 1959px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #price1{
+        font-family: Tahoma;
+        margin-top: 84px;
+        position: absolute;
+    }
+    #hall{
+        border-radius: 6px;
+        position: absolute;
+        left: 437px;
+        top: 2006px;
+        font-family: Tahoma;
+        font-size: 15px;
+        width: 81px;
+        /* margin-bottom: 30px; */
+        height: 32px;
+        border: 1px solid #b9b9b9;
+    }
+    #hall1{
+        font-family: Tahoma;
+        top: 95px;
+        position: relative;
+    }
+
+
+
+
+    .insaall{
+        /* position: relative; */
+        /* margin-top: 26px; */
+        /* position: relative; */
+        /* bottom: 36px; */
+        padding: 0px 0px -6px;
+        /* margin-left: 49px; */
+    }
+}
+
+
+@media only screen  and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi)  {
+
+
+    @media only screen  and (min-device-width: 1200px)
+    and (max-device-width: 1600px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (min-resolution: 192dpi)  {
+
+
+
+        #send{
+            background: #000;
+            width: 158px;
+            height: 35px;
+            font-family: Tahoma;
+            text-align: center;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            margin-left: 331px;
+            padding: 0px;
+            top: 103px;
+            position: relative;
+        }
+        #send:hover{
+            background: #ffff;
+            transition: all 1s;
+            color:#000;
+            font-family: Tahoma;
+            border-color: 1px solid #bcccbe;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 10px 10px rgba(0,0,0,0.2);
+
+        }
+
+
+
+
+        #name{
+            border-radius: 6px;
+            position: absolute;
+            left: 437px;
+            top: 1810px;
+            font-family: Tahoma;
+            font-size: 15px;
+            font-weight: normal;
+            /* margin-bottom: 30px; */
+            height: 32px;
+            width: 194px;
+            border: 1px solid #b9b9b9;
+        }
+        #name1{
+            font-family: Tahoma;
+        }
+        #descr{
+            /* border-radius: 9px; */
+            /* position: absolute; */
+            border-radius: 6px;
+            position: absolute;
+            left: 437px;
+            font-family: Tahoma;
+            font-size: 15px;
+            top: 1855px;
+            /* margin-bottom: 30px; */
+            height: 100px;
+            width: 234px;
+            border: 1px solid #b9b9b9;
+        }
+
+        #opisanie1{
+            font-family: Tahoma;
+        }
+
+        #price{
+            border-radius: 6px;
+            position: absolute;
+            left: 437px;
+            width: 149px;
+            font-family: Tahoma;
+            font-size: 15px;
+            top: 1969px;
+            /* margin-bottom: 30px; */
+            height: 32px;
+            border: 1px solid #b9b9b9;
+        }
+        #price1{
+            font-family: Tahoma;
+            margin-top: 84px;
+            position: absolute;
+        }
+        #hall{
+            border-radius: 6px;
+            position: absolute;
+            left: 437px;
+            top: 2013px;
+            font-family: Tahoma;
+            font-size: 15px;
+            width: 81px;
+            /* margin-bottom: 30px; */
+            height: 32px;
+            border: 1px solid #b9b9b9;
+        }
+        #hall1{
+            font-family: Tahoma;
+            top: 90px;
+            position: relative;
+        }
+
+
+
+
+        .insaall{
+            /* position: relative; */
+            /* margin-top: 26px; */
+            /* position: relative; */
+            /* bottom: 36px; */
+            padding: 0px 0px -6px;
+            /* margin-left: 49px; */
+        }
+    }
 
 }

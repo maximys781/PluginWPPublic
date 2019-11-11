@@ -1,7 +1,4 @@
 <?php
-echo "<header>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-</header>";
 //namespace PicPlug;
 class PicPlug
 {
@@ -9,7 +6,7 @@ class PicPlug
     public function __construct()
     {
        add_action('wp_enqueue_scripts',array($this,'special_plugin_styles'));
-        add_action('admin_menu', 'func_add_admin_link');
+        //add_action('admin_menu', 'func_add_admin_link');
         add_shortcode('showpic',array($this,'showpic_func'));
 
     }
@@ -26,7 +23,7 @@ class PicPlug
 
 
 
-    public  function func_add_admin_link()
+    /*public  function func_add_admin_link()
       { //функция для добавления ссылки на страницу в меню
           add_menu_page( //WP функция для добавления меню
               'Плагин картины',// Название страницы
@@ -34,7 +31,7 @@ class PicPlug
               'manage_options',//привелегии на просмотр
               'Pictures/includes/main.php'// ссылка на файл со страницей
           );
-      }
+      }*/
 
 
 // Обычный шоткод
@@ -44,9 +41,9 @@ class PicPlug
 
 //подключение к БД
         $host = 'localhost';
-        $db = 'db';
-        $user = 'root';
-        $pass = 'root';
+        $db = 'y98066hv_1';
+        $user = 'y98066hv_1';
+        $pass = 'KizpPD2Lmr';
         $charset = 'utf8';
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
